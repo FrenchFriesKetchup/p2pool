@@ -118,6 +118,24 @@ nets = dict(
         ANNOUNCE_CHANNEL='#p2pool-alt',
         VERSION_CHECK=lambda v: True,
     ),
+    stablecoin=math.Object(
+        PARENT=networks.nets['stablecoin'],
+        SHARE_PERIOD=30, # seconds
+        CHAIN_LENGTH=24*60*60//60, # shares
+        REAL_CHAIN_LENGTH=24*60*60//60, # shares -> half a day
+        TARGET_LOOKBEHIND=200, # shares
+        SPREAD=45, # blocks
+        IDENTIFIER='a41b2306a1b7d35e'.decode('hex'),
+        PREFIX='5623b62178d1b8a3'.decode('hex'),
+        P2P_PORT=9898,
+        MIN_TARGET=0,
+        MAX_TARGET=2**256//2**20 - 1,
+        PERSIST=False,
+        WORKER_PORT=9119,
+        BOOTSTRAP_ADDRS=''.split(' '),
+        ANNOUNCE_CHANNEL='#p2pool-alt',
+        VERSION_CHECK=lambda v: True,
+    ),
 
 )
 for net_name, net in nets.iteritems():
