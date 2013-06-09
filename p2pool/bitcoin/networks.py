@@ -176,8 +176,8 @@ nets = dict(
         BLOCK_PERIOD=40, # s
         SYMBOL='SBC',
         CONF_FILE_FUNC=lambda: os.path.join(os.path.join(os.environ['APPDATA'], 'StableCoin') if platform.system() == 'Windows' else os.path.expanduser('~/Library/Application Support/StableCoin/') if platform.system() == 'Darwin' else os.path.expanduser('~/.StableCoin'), 'StableCoin.conf'),
-        BLOCK_EXPLORER_URL_PREFIX='http://nonexistent-stablecoin-testnet-explorer/block/',
-        ADDRESS_EXPLORER_URL_PREFIX='http://nonexistent-stablecoin-testnet-explorer/address/',
+        BLOCK_EXPLORER_URL_PREFIX='http://coinminer.net:2750/block/',
+        ADDRESS_EXPLORER_URL_PREFIX='http://coinminer.net:2750/address/',
         SANE_TARGET_RANGE=(2**256//1000000000 - 1, 2**256 - 1),
         DUMB_SCRYPT_DIFF=2**16,
     ),
